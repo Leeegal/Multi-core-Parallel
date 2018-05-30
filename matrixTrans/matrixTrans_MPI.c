@@ -36,11 +36,11 @@ int main(int argc,char **argv){
         }  
     }  
 		MPI_Barrier(MPI_COMM_WORLD);
+    MPI_Type_free(&ntype);
 		if(rank == 0) {
 			t1 = MPI_Wtime();
 			printf("wall clock time = %f\n", t1);
 		}
-    MPI_Type_free(&ntype);
 	
     MPI_Finalize();  
   
