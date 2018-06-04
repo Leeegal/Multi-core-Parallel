@@ -6,9 +6,10 @@
 #include "calculatePI_ispc.h"
 using namespace ispc;
 
-#define PALNUM 100
+#define PALNUM 10000
 
 int main() {
+    std::cout << "问题规模： " << PALNUM << std::endl;
     auto start = std::chrono::system_clock::now();
 
     double sum = calPi(PALNUM);

@@ -1,15 +1,7 @@
-/* pi.c - parallel C code to demonstrate Linux thread interface 
- * Original Source: www.tldp.org/HOWTP/Parallel_processing-HOWTO 
- * Since PI == 4 * arctan(1), and arctan(x) is the 
- *  integral from 0 to x of (1/(1+x*x),
- *  the for loop below approximates that integration.
- * Generalized by: Joel Adams
- * Usage: ./a.out <numIntervals> <numThreads>
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h> 
+#include <sys/time.h>
 
 /* global variables (shared by all threads */
 volatile long double pi = 0.0; /* the approximation, to 31 sigfigs */
@@ -50,6 +42,7 @@ int main(int argc, char **argv)
     void *retval;              /* unused; required for join() */
     int *threadID;             /* dynarray of thread id #s */
     int i;                     /* loop control variable */
+    time_t start = clock();
 
    if (argc == 3) {
       intervals = atoi(argv[1]); 
@@ -68,6 +61,8 @@ int main(int argc, char **argv)
       }
       printf("Estimation of pi is %32.30Lf \n", pi);
       printf("(actual pi value is 3.141592653589793238462643383279...)\n");
+      time_t end = clock();
+      printf("the running time is : %fs\n", (double)(end -start)/CLOCKS_PER_SEC);
     } else {
       printf("Usage: ./a.out <numIntervals> <numThreads>");    
     }

@@ -6,7 +6,7 @@
 #include "matrixTran_ispc.h"
 using namespace ispc;
 
-#define PALNUM 5
+#define PALNUM 500
 
 void init(int a[][PALNUM]) {
     int num = 1;
@@ -32,14 +32,15 @@ int main() {
     int a[PALNUM][PALNUM];
     int result[PALNUM][PALNUM];
 
-    init(a); printMatrix(a);
+    init(a); 
+    // printMatrix(a);
    
     auto start = std::chrono::system_clock::now();
 
     matrixTran(a, result, PALNUM-1);
 
     auto end = std::chrono::system_clock::now();
-    printMatrix(result);
+    // printMatrix(result);
     std::chrono::duration<double> diff = end-start;
     std::cout << "time: " << diff.count() << std::endl;
 

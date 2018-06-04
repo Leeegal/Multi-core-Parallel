@@ -1,5 +1,5 @@
 
-#define NUM 5
+#define NUM 500
 export void matrixMul(uniform int a[][NUM], uniform int b[][NUM], uniform int result[][NUM], uniform int count) {
     foreach (index = 0 ... count) {
       int sum = 0;

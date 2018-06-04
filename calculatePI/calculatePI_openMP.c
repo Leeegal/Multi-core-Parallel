@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #define MAX_THREADS 8
 
-static long steps = 1000000000;
+static long steps = 10000;
 double step;
 
 int main (int argc, const char *argv[]) {

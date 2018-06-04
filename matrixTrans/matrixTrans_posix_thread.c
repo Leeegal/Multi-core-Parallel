@@ -6,8 +6,8 @@
 #include <sys/time.h>
 #include <pthread.h>
 
-#define ROWS 5
-#define COLS 7
+#define ROWS 500
+#define COLS 500
 int matrix[ROWS][COLS];
 int result[COLS][ROWS];
 
@@ -17,11 +17,11 @@ void initMatrix() {
   for(int i = 0; i < ROWS; i++) {
     for(int j = 0; j < COLS; j++) {
       matrix[i][j] = num++;
-      printf("%d ", matrix[i][j]);
+      // printf("%d ", matrix[i][j]);
     }
-    printf("\n");
+    // printf("\n");
   }
-  printf("\n");
+  // printf("\n");
 }
 
 void printResult() {
@@ -39,7 +39,7 @@ void* run(void *n) {
   // if(index == 0) {
   //   printf("zero 2");
   // }
-  printf("number: %d\n", index);
+  // printf("number: %d\n", index);
 
   for(int i = 0; i < COLS; i++) {
     result[i][index] = matrix[index][i];
@@ -61,6 +61,6 @@ int main() {
   }
 
   time_t end = clock();
-  printResult();
+  // printResult();
   printf("the running time is : %f\n", (double)(end -start)/CLOCKS_PER_SEC);
 }

@@ -1,5 +1,5 @@
 
-#define NUM 5
+#define NUM 500
 export void matrixTran(uniform int a[][NUM], uniform int result[][NUM], uniform int count) {
     foreach (index = 0 ... count) {
      for(int i = 0; i <= count; i++) {

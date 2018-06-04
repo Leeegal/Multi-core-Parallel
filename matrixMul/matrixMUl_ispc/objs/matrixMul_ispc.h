@@ -34,7 +34,7 @@ namespace ispc { /* namespace */
 #if defined(__cplusplus) && (! defined(__ISPC_NO_EXTERN_C) || !__ISPC_NO_EXTERN_C )
 extern "C" {
 #endif // __cplusplus
-    extern void matrixMul(int32_t a[][5], int32_t b[][5], int32_t result[][5], int32_t count);
+    extern void matrixMul(int32_t a[][500], int32_t b[][500], int32_t result[][500], int32_t count);
 #if defined(__cplusplus) && (! defined(__ISPC_NO_EXTERN_C) || !__ISPC_NO_EXTERN_C )
 } /* end extern C */
 #endif // __cplusplus

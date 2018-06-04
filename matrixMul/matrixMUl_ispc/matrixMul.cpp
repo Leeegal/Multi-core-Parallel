@@ -6,7 +6,7 @@
 #include "matrixMul_ispc.h"
 using namespace ispc;
 
-#define PALNUM 5
+#define PALNUM 500
 
 void init(int a[][PALNUM]) {
     int num = 1;
@@ -32,15 +32,17 @@ int main() {
     int a[PALNUM][PALNUM];
     int b[PALNUM][PALNUM];
     int result[PALNUM][PALNUM];
-    init(a); printMatrix(a);
-    init(b); printMatrix(b);
+    init(a); 
+    // printMatrix(a);
+    init(b); 
+    // printMatrix(b);
    
     auto start = std::chrono::system_clock::now();
 
     matrixMul(a, b, result, PALNUM-1);
 
     auto end = std::chrono::system_clock::now();
-    printMatrix(result);
+    // printMatrix(result);
     std::chrono::duration<double> diff = end-start;
     std::cout << "time: " << diff.count() << std::endl;
 

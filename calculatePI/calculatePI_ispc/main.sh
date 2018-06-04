@@ -1,5 +1,5 @@
 #! /bin/bash
 make
-g++ objs/calculatePI_ispc.o objs/calculatePI.o
+clang++ objs/calculatePI_ispc.o objs/calculatePI.o -o ./objs/a.out
 ./objs/a.out
 
