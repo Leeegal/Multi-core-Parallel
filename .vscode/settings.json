@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.ispc": "c",
+    "bitset": "c",
+    "chrono": "c",
+    "valarray": "c"
+  }
+}
