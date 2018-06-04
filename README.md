@@ -1,6 +1,6 @@
 # 多核编程
 
-> 主要涉及到 MPI, openMP, POSIX_Thread以及SPMD
+> 主要涉及到 MPI, openMP, POSIX_Thread以及ISPC技术
 
 问题：
 
