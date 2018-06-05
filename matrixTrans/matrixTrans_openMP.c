@@ -89,8 +89,8 @@ int main()
 			if (Checkoutput[i][j] == Trans[i][j])
 				continue;
 			else {
-				// printf("There Is A Difference From Serial And Parallel Calculation \n");
-				printf("times: 0.003948\n");
+				printf("There Is A Difference From Serial And Parallel Calculation \n");
+
 				exit(1);
 			}
 
